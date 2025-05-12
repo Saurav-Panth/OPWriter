@@ -27,7 +27,6 @@ public class ChatGptServiceImp implements ChatGptService {
 
         String prompt = "Write a detailed "+format+" on the topic: " + topic+"with only"+words+" words";
 
-        System.out.println(prompt);
         String jsonRequest = "{"
                 + "\"model\": \"command-r\","
                 + "\"message\": \"" + prompt + "\","
@@ -51,7 +50,7 @@ public class ChatGptServiceImp implements ChatGptService {
             }
 
             String responseBody = response.body().string();
-            System.out.println("Cohere Response:\n" + responseBody);
+
 
           
             String result = responseBody.split("\"text\":\"")[1].split("\"")[0];
